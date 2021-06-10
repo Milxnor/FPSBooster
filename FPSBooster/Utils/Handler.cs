@@ -14,7 +14,10 @@ namespace FPSBooster.Utils
             {
                 if (num == windowCode) WindowsFN.InitWindowsFN();
                 else if (num == configCode) ConfigFN.ChangeUserSettings();
-            }
+                else if (num == hardwareCode) HardwareFN.InitHardwareFN();
+                else if (num == otherCode) OtherFN.InitOtherFN();
+                else Console.WriteLine("Error, invalid number!");
+            }   
         }
     }
 }

@@ -39,10 +39,24 @@ namespace FPSBooster.Utils
     }
     class HardwareFN
     {
+        public static void InitHardwareFN()
+        {
+            InstallDrivers();
+        }
+        public static void InstallDrivers()
+        {
 
+        }
     }
     class OtherFN
     {
+        public static void InitOtherFN()
+        {
+            ClearTemp();
+        }
+        public static void ClearTemp()
+        {
 
+        }
     }
 }
