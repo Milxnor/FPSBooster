@@ -9,5 +9,7 @@ namespace FPSBooster.Utils
     class vars
     {
         public static string localAD = Environment.GetEnvironmentVariable("LocalAppData");
+        public static string fnCode, windowCode = "1";
+        public static string configCode = "2"; // I know what your saying, this is stupid and resourceful, i have to agree but it makes more sense for the reader
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using static FPSBooster.Utils.vars;
 
 namespace FPSBooster
 {
@@ -27,7 +27,7 @@ namespace FPSBooster
 [4] Other" + "\n");
             Console.WriteLine("Please pick a number: ");
             string num = Console.ReadLine();
-            if(num == "1") 
+            Utils.Handler.Handle(num, fnCode);
             Console.ReadLine();
         }
     }

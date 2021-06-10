@@ -17,10 +17,25 @@ namespace FPSBooster.Utils
     }
     class WindowsFN
     { 
+        public static void InitWindowsFN()
+        {
+            ClearCache();
+        }
+        public static void ClearCache()
+        {
+
+        }
     }
     class ConfigFN
     {
+        public static void InitConfigFN()
+        {
+            ChangeUserSettings();
+        }
+        public static void ChangeUserSettings()
+        {
 
+        }
     }
     class HardwareFN
     {
