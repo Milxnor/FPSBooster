@@ -8,7 +8,7 @@ namespace FPSBooster.Utils
 {
     class Handler
     {
-        public static void Handle(string num, string num2)
+        public static void Handle(string num = "", string num2 = "1")
         { 
             if (num2 == fnCode)
             {
@@ -16,8 +16,20 @@ namespace FPSBooster.Utils
                 else if (num == configCode) ConfigFN.ChangeUserSettings();
                 else if (num == hardwareCode) HardwareFN.InitHardwareFN();
                 else if (num == otherCode) OtherFN.InitOtherFN();
-                else Console.WriteLine("Error, invalid number!");
+                else
+                {
+                    Console.WriteLine(@"
+[1] Windows FPS Boost
+[2] Config FPS Boost
+[3] Hardware FPS Boost
+[4] Network Optimization
+[5] Other" + "\n");
+                }
             }   
         }
+        /*public static string GetInput(string msg) // TODO
+        {
+
+        } */
     }
 }

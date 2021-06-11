@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using static FPSBooster.Utils.Logs;
+using static FPSBooster.Utils.vars;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FPSBooster.Utils
 {
@@ -45,7 +46,7 @@ namespace FPSBooster.Utils
         }
         public static void InstallDrivers()
         {
-
+            
         }
     }
     class OtherFN
@@ -56,7 +57,47 @@ namespace FPSBooster.Utils
         }
         public static void ClearTemp()
         {
-
+            //DirectoryInfo tempDI = new DirectoryInfo(Path.GetTempPath());
+            string[] fileArr = Directory.GetFiles(Path.GetTempPath());
+            string[] dirArr = Directory.GetDirectories(Path.GetTempPath());
+            foreach (string filePath in fileArr)
+            {
+                try
+                {
+                    File.Delete(filePath);
+                    Log("[LOG] Deleted " + filePath, "");
+                }
+                catch//(IOException e)
+                {
+                    fileArr.Where(val => val != filePath).ToArray();
+                }
+            }
+            foreach (string dirPath in dirArr)
+            {
+                string[] dirFiles = Directory.GetFiles(dirPath);
+                foreach (string filePath in dirFiles)
+                {
+                    try
+                    {
+                        File.Delete(filePath);
+                        Log("[LOG] Deleted " + filePath, "");
+                    }
+                    catch// (IOException e)
+                    {
+                        dirFiles.Where(val => val != filePath).ToArray();
+                    }
+                }
+                try
+                {
+                    Directory.Delete(dirPath);
+                    Log("[LOG] Deleted " + dirPath, "");
+                }
+                catch// (IOException e)
+                {
+                    dirArr.Where(val => val != dirPath).ToArray();
+                }
+            }
+            Console.WriteLine("Completed!");
         }
     }
 }

@@ -10,24 +10,22 @@ namespace FPSBooster
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(@"
- ________ ________  ________           ________  ________  ________  ________  _________  _______   ________     
-|\  _____\\   __  \|\   ____\         |\   __  \|\   __  \|\   __  \|\   ____\|\___   ___\\  ___ \ |\   __  \    
-\ \  \__/\ \  \|\  \ \  \___|_        \ \  \|\ /\ \  \|\  \ \  \|\  \ \  \___|\|___ \  \_\ \   __/|\ \  \ \  \   
- \ \   __\\ \   ____\ \_____  \        \ \   __  \ \  \\\  \ \  \\\  \ \_____  \   \ \  \ \ \  \_|/_\ \   _  _\  
-  \ \  \_| \ \  \___|\|____|\  \        \ \  \|\  \ \  \\\  \ \  \\\  \|____|\  \   \ \  \ \ \  \_|\ \ \  \\  \
-   \ \__\   \ \__\     ____\_\  \        \ \_______\ \_______\ \_______\____\_\  \   \ \__\ \ \_______\ \__\\ _\ 
-    \|__|    \|__|    |\_________\        \|_______|\|_______|\|_______|\_________\   \|__|  \|_______|\|__|\|__|
-                      \|_________|                                     \|_________|
-                ");
-            Console.WriteLine(@"
-[1] Windows FPS Boost
-[2] Config FPS Boost
-[3] Hardware FPS Boost
-[4] Other" + "\n");
-            Console.WriteLine("Please pick a number: ");
-            string num = Console.ReadLine();
-            Utils.Handler.Handle(num, fnCode);
+            Console.WriteLine(asciiText);
+            Console.Write("\nYou are running on v" + InstallVersion);
+            if (Utils.NetUtils.VersionCheck() != 0) Console.Write($@", there is a new update availible (v{Utils.NetUtils.VersionCheck()})" + "\n");
+            Console.WriteLine($@"
+[1] Fortnite
+[2] Valorant (coming soon)
+[3] CSGO (coming soon)
+[4] Black Ops Cold War (coming soon)
+[5] Youtuber Prefrences (coming soon)
+");
+            Console.Write("Please pick a number: ");
+            string inputGame = Console.ReadLine();
+            Utils.Handler.Handle("bruh", inputGame);
+            Console.Write("Please pick a number: ");
+            string inputOption = Console.ReadLine();
+            Utils.Handler.Handle(inputOption, inputGame);
             Console.ReadLine();
         }
     }
