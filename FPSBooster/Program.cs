@@ -12,6 +12,7 @@ namespace FPSBooster
         {
             Console.WriteLine(asciiText);
             Console.Write("\nYou are running on v" + InstallVersion);
+            Console.Write("\nCredits: Milxnor#0101");
             if (Utils.NetUtils.VersionCheck() != 0) Console.Write($@", there is a new update availible (v{Utils.NetUtils.VersionCheck()})" + "\n");
             Console.WriteLine($@"
 [1] Fortnite
@@ -22,7 +23,7 @@ namespace FPSBooster
 ");
             Console.Write("Please pick a number: ");
             string inputGame = Console.ReadLine();
-            Utils.Handler.Handle("bruh", inputGame);
+            Utils.Handler.Handle("", inputGame);
             Console.Write("Please pick a number: ");
             string inputOption = Console.ReadLine();
             Utils.Handler.Handle(inputOption, inputGame);

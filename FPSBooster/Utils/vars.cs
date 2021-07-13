@@ -8,7 +8,9 @@ namespace FPSBooster.Utils
 {
     class vars
     {
+        public static string cD = AppDomain.CurrentDomain.BaseDirectory;
         public static string localAD = Environment.GetEnvironmentVariable("LocalAppData");
+        public static string userSettings = localAD + @"FortniteGame\Saved\Config\WindowsClient\GameUserSettings.ini";
         public static string fnCode = "1";
         public static string valCode = "2";
         public static string csgoCode = "3";
